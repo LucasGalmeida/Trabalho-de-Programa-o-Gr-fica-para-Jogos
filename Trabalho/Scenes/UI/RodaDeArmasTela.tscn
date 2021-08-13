@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/menu.png" type="Texture" id=1]
+[ext_resource path="res://Assets/armas.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/UI/RodaDeArmasTela.gd" type="Script" id=3]
+
+[node name="RodaDeArmasTela" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.33484
+margin_bottom = 1.33484
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Metralhadora" type="TextureButton" parent="."]
+margin_left = 626.311
+margin_top = 214.962
+margin_right = 876.311
+margin_bottom = 392.962
+rect_rotation = 90.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Metralhadora"]
+position = Vector2( 136.154, 80.0904 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 403.452, 165.933, 140.597, 173.042 )
+
+[node name="Pistola" type="TextureButton" parent="."]
+margin_left = 422.134
+margin_top = 339.228
+margin_right = 663.134
+margin_bottom = 517.228
+rect_rotation = -89.9999
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Pistola"]
+position = Vector2( 116.131, 78.7553 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( -12.8839, 185.946, 159.153, 138.796 )
+
+[connection signal="mouse_entered" from="Metralhadora" to="." method="mouse_entered" binds= [ "Metralhadora" ]]
+[connection signal="mouse_exited" from="Metralhadora" to="." method="mouse_exited" binds= [ "Metralhadora" ]]
+[connection signal="pressed" from="Metralhadora" to="." method="_on_Metralhadora_pressed"]
+[connection signal="mouse_entered" from="Pistola" to="." method="mouse_entered" binds= [ "Pistola" ]]
+[connection signal="mouse_exited" from="Pistola" to="." method="mouse_exited" binds= [ "Pistola" ]]
+[connection signal="pressed" from="Pistola" to="." method="_on_Pistola_pressed"]
